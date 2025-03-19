@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de compra</title>
+</head>
+<body>
+    <header>
+        <h1>Confirmación de Compra</h1>
+    </header>
+    <fieldset>
+        <h2>Detalles de tu compra</h2>
+        <fieldset>
+            <!-- Usamos span para que no haya un salto de linea y se escriba delante de cada nombre de campo-->
+            Nombre: <span id="nombre"></span>
+        </fieldset>
+        <fieldset>
+            Fecha: <span id="fecha"></span>
+        </fieldset>
+        <fieldset>
+            Lugar: <span id="ciudad"></span>
+        </fieldset>
+        <fieldset>
+            Cantidad de Entradas: <span id="cantidad"></span>
+        </fieldset>
+        <fieldset>
+            Categoría: <span id="categoria"></span>
+        </fieldset>
+        <fieldset>
+            Método de Pago: <span id="metodoPago"></span>
+        </fieldset>
+    </fieldset>
+
+    <script>
+        // Recuperaramos los datos del localStorage
+        document.getElementById('nombre').textContent = localStorage.getItem('nombre');
+        document.getElementById('fecha').textContent = localStorage.getItem('fecha');
+        document.getElementById('ciudad').textContent = localStorage.getItem('ciudad');
+        document.getElementById('cantidad').textContent = localStorage.getItem('cantidad');
+        document.getElementById('categoria').textContent = localStorage.getItem('categoria');
+        document.getElementById('metodoPago').textContent = localStorage.getItem('metodoPago');
+    </script>
+</body>
+</html>

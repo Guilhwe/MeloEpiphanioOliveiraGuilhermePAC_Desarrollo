@@ -7,7 +7,7 @@ formulario.addEventListener("submit", recogerFormulario);
 
         //declaramos las variables
         const nombre = document.getElementById('nombre').value;
-        const concierto = document.getElementById('concierto').value;
+        const ciudad = document.getElementById('ciudad').value;
         const fecha = document.getElementById('fecha').value;
         const cantidad = document.getElementById('cantidad').value;
         const categoria = document.getElementById('categoria').value;
@@ -18,11 +18,24 @@ formulario.addEventListener("submit", recogerFormulario);
         //console logs para comprobar que se han recogido los datos
         console.log("Datos del formulario:");
         console.log("Nombre:", nombre);
-        console.log("Concierto:", concierto);
+        console.log("Ciudad:", ciudad);
         console.log("Fecha:", fecha);
         console.log("Cantidad:", cantidad);
         console.log("Categoría:", categoria);
         console.log("Método de Pago:", metodoPago);
         console.log("Términos aceptados:", terminos);
+
+        //guardamos los datos en el localStorage pazra poder mostrarlos en la pagina de confirmacion
+        localStorage.setItem('nombre', nombre);
+        localStorage.setItem('ciudad', ciudad);
+        localStorage.setItem('fecha', fecha);
+        localStorage.setItem('cantidad', cantidad);
+        localStorage.setItem('categoria', categoria);
+        localStorage.setItem('metodoPago', metodoPago);
+
+        //redirigimos a la pagina de confirmacion
+        window.location.href = "confirmacion.html";
+
+        
     }
 
