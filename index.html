@@ -11,14 +11,15 @@
     <h1>Linkin Park</h1>
     <p>Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California, formada en 1996.<br>
          Está integrada por el vocalista, compositor y guitarrista rítmico Mike Shinoda, 
-         el bajista Dave Farrell, el DJ Joe Hahn, el guitarrista principal Brad Delson, 
+         el bajista Dave Farrell, <br>
+         el DJ Joe Hahn, el guitarrista principal Brad Delson, 
          el baterista Colin Brittain, y la vocalista y compositora Emily Armstrong.<br>
          En 2024, el grupo anunció la incorporación de Armstrong como nueva vocalista tras el fallecimiento de Chester Bennington en 2017, 
-         y Brittain como nuevo baterista en reemplazo de Rob Bourdon</p>
+         <br>y Brittain como nuevo baterista en reemplazo de Rob Bourdon</p>
          <!-- La siguiente tabla es para mostrar las fechas de los conciertos , se añade la palabra "border" para que se vea el borde de la tabla -->
-         
+         <h3>Fecha de Conciertos</h2>
          <table border ="1"> 
-            <!-- encabezado de la tabla, se usa thead para especificar que es una fila especial con esta funcion -->
+            <!-- Encabezado de la tabla, se usa thead para especificar que es una fila especial con esta funcion -->
             <thead>
                 <tr>
                     <th>Fecha</th>
@@ -27,79 +28,103 @@
                     <th>Precio</th>
                 </tr>
             </thead>
-            <!-- cuerpo de la tabla -->
+            <!-- Cuerpo de la tabla -->
             <tbody>
                 <tr>
-                    <td>12/05/2024</td>
+                    <td>10/05/2025</td>
                     <td>Madrid-Estadio Santiago Bernabéu </td>
                     <td>21:00</td>
                     <td>70€</td>
                 </tr>
                 <tr>
-                    <td>15/05/2024</td>
+                    <td>15/05/2025</td>
                     <td>Barcelona-Estadio Olimpico de Montjuic</td>
                     <td>21:00</td>
                     <td>65€</td>
                 </tr>
                 <tr>
-                    <td>18/05/2024</td>
+                    <td>20/05/2025</td>
                     <td>Sevilla-Estadio Olimpico de la Cartuja</td>
                     <td>21:00</td>
                     <td>70€</td>
                 </tr>
          </table>
-         <h2>Compra de Entradas</h2>
+         
+         <h3>Compra de Entradas</h3>
          <form action="procesar_compra.php" method="post">
-            <label for="Nombre">Nombre:</label>
-            <!-- Nombre de la persona. Se añade la palabra "required"en cada elemento del formulario  para que el campo sea obligatorio -->
-            <input type="text" name="nombre" id="nombre" required>
+            <fieldset>
+                <legend>Información Personal</legend>
+                <label for="Nombre">Nombre:</label>
+                <!-- Nombre de la persona. Se añade la palabra "required" en cada elemento del formulario para que el campo sea obligatorio -->
+                <input type="text" name="nombre" id="nombre" required>
+            </fieldset>
             <br>
-            <!--Seleccion del concierto mediante las opciones disponibles-->
-            <label for="concierto">Seleccione el concierto:</label>
-            <select name="concierto" id="concierto" required>
-                <option value="Madrid">Madrid</option>
-                <option value="Barcelona">Barcelona</option>
-                <option value="Sevilla">Sevilla</option>
-            </select>
+            <fieldset>
+                <legend>Detalles del Concierto</legend>
+                <!-- Selección del concierto mediante las opciones disponibles -->
+                <label for="concierto">Seleccione el concierto:</label>
+                <select name="concierto" id="concierto" required>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Sevilla">Sevilla</option>
+                </select>
+                <br>
+                <label for="fecha">Seleccione la fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <br>
+                <!-- Cantidad de entradas que se desean comprar -->
+                <label for="cantidad">Cantidad de entradas:</label>
+                <select name="cantidad" id="cantidad" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br>
+                <!-- Categoría de la entrada -->
+                <label for="categoria">Seleccione la categoría:</label>
+                <select name="categoria" id="categoria" required>
+                    <option value="Front Stage">Front Stage</option>
+                    <option value="Pista">General</option>
+                    <option value="Grada">Grada</option>
+                    <option value="Palco">Palco</option>
+                    <option value="VIP">Vip con Meet & Greet</option>
+                </select>
+            </fieldset>
             <br>
-            <!--Cantidad de entradas que se desean comprar-->
-            <label for="cantidad">Cantidad de entradas:</label>
-            <select name="cantidad"  id="cantidad" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+            <fieldset>
+                <legend>Método de Pago</legend>
+                <!-- Selección del método de pago mediante botones (radio) -->
+                <label for="metodo_pago">Seleccione el método de pago:</label>
+                <input type="radio" id="tarjeta" name="metodo_pago" value="Tarjeta" required>
+                <label for="tarjeta">Tarjeta</label>
+                <img src="img/tarjeta.jpg" alt="Tarjeta">
+                <input type="radio" id="paypal" name="metodo_pago" value="Paypal" required>
+                <label for="paypal">Paypal</label>
+                <img src="img/paypal.jpg" alt="Paypal">
+                <input type="radio" id="bizum" name="metodo_pago" value="Bizum" required>
+                <label for="bizum">Bizum</label>
+                <img src="img/bizum.jpg" alt="Bizum">
+                <input type="radio" id="crypto" name="metodo_pago" value="Criptomonedas" required>
+                <label for="crypto">Criptomonedas</label>
+                <img src="img/crypto.jpg" alt="Criptomonedas">
+            </fieldset>
             <br>
-            <!--Categoria de la entrada-->
-            <label for="categoria">Seleccione la categoria:</label>
-            <select name="categoria" id="categoria" required>
-                <option value="Front Stage">Front Stage</option>
-                <option value="Pista">General</option>
-                <option value="Grada">Grada</option>
-                <option value="Palco">Palco</option>
-                <option value="VIP">Vip con Meet & Greet</option>
-            </select>
-            <br>
-            <!--Seleccion del método de pago mediante botones(radio)-->
-            <label for="metodo_pago">Seleccione el método de pago:</label>
-            <input type="radio" id="tarjeta" name="metodo_pago" value="Tarjeta" required>
-            <label for="tarjeta">Tarjeta</label>
-            <input type="radio" id="paypal" name="metodo_pago" value="Paypal" required>
-            <label for="paypal">Paypal</label>
-            <input type="radio" id="bizum" name="metodo_pago" value="Bizum" required>
-            <label for="bizum">Bizum</label>
-            <br>
-            <!--Checkbox para terminos y condiciones-->
-            <input type="checkbox" id="terminos" name="terminos" required>
-            <label for="terminos">Acepto los términos y condiciones</a></label>
+            <fieldset>
+                <legend>Términos y Condiciones</legend>
+                <!-- Checkbox para términos y condiciones -->
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos">Acepto los términos y condiciones</label>
+            </fieldset>
             <br>
             <button type="submit">Comprar</button>
+         </form>
 
 
             
-         </form>
+         
+        
          
 </body>
 </html>
