@@ -17,7 +17,7 @@
          En 2024, el grupo anunció la incorporación de Armstrong como nueva vocalista tras el fallecimiento de Chester Bennington en 2017, 
          <br>y Brittain como nuevo baterista en reemplazo de Rob Bourdon</p>
          <!-- La siguiente tabla es para mostrar las fechas de los conciertos , se añade la palabra "border" para que se vea el borde de la tabla -->
-         <h3>Fecha de Conciertos</h2>
+         <h3>Fecha de Conciertos</h3>
          <table border ="1"> 
             <!-- Encabezado de la tabla, se usa thead para especificar que es una fila especial con esta funcion -->
             <thead>
@@ -35,6 +35,7 @@
                     <td>Madrid-Estadio Santiago Bernabéu </td>
                     <td>21:00</td>
                     <td>70€</td>
+                    
                 </tr>
                 <tr>
                     <td>15/05/2025</td>
@@ -48,12 +49,14 @@
                     <td>21:00</td>
                     <td>70€</td>
                 </tr>
+            </tbody>
          </table>
          
          <h3>Compra de Entradas</h3>
-         <form action="procesar_compra.php" method="post">
+         <form >
             <fieldset>
-                <legend>Información Personal</legend>
+                <legend>Datos Personales</legend>
+                <!--Se usa label for porque es recomendado hacerlo por la accesibilidad del elemento pero al estar contenido dentro del campo no seria necesario-->
                 <label for="Nombre">Nombre:</label>
                 <!-- Nombre de la persona. Se añade la palabra "required" en cada elemento del formulario para que el campo sea obligatorio -->
                 <input type="text" name="nombre" id="nombre" required>
@@ -96,31 +99,32 @@
             <fieldset>
                 <legend>Método de Pago</legend>
                 <!-- Selección del método de pago mediante botones (radio) -->
-                <label for="metodo_pago">Seleccione el método de pago:</label>
-                <input type="radio" id="tarjeta" name="metodo_pago" value="Tarjeta" required>
+                <label for="metodoPago">Seleccione el método de pago:</label>
+                <input type="radio" id="tarjeta" name="metodoPago" value="Tarjeta" required>
                 <label for="tarjeta">Tarjeta</label>
                 <img src="img/tarjeta.jpg" alt="Tarjeta">
-                <input type="radio" id="paypal" name="metodo_pago" value="Paypal" required>
+                <input type="radio" id="paypal" name="metodoPago" value="Paypal" required>
                 <label for="paypal">Paypal</label>
                 <img src="img/paypal.jpg" alt="Paypal">
-                <input type="radio" id="bizum" name="metodo_pago" value="Bizum" required>
+                <input type="radio" id="bizum" name="metodoPago" value="Bizum" required>
                 <label for="bizum">Bizum</label>
                 <img src="img/bizum.jpg" alt="Bizum">
-                <input type="radio" id="crypto" name="metodo_pago" value="Criptomonedas" required>
+                <input type="radio" id="crypto" name="metodoPago" value="Criptomonedas" required>
                 <label for="crypto">Criptomonedas</label>
                 <img src="img/crypto.jpg" alt="Criptomonedas">
             </fieldset>
             <br>
             <fieldset>
                 <legend>Términos y Condiciones</legend>
-                <!-- Checkbox para términos y condiciones -->
+                <!-- Checkbox para términos y condiciones -->   
+                <label for="terminos" >Acepto los términos y condiciones</label>
                 <input type="checkbox" id="terminos" name="terminos" required>
-                <label for="terminos">Acepto los términos y condiciones</label>
+                
             </fieldset>
             <br>
             <button type="submit">Comprar</button>
          </form>
-
+         <script src="js/script.js"></script>
 
             
          
