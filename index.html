@@ -5,10 +5,14 @@
     <!-- La siguiente línea es para que la página se adapte a cualquier dispositivo y no solo a la vista de ordenador -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <img src="img/grupo.jpg" alt="Linkin Park" >
+    <img src="img/grupo.jpg" id="foto" alt="Linkin Park" >
+    <br><br>
+    <div id="descripcion">
     <h1>Linkin Park</h1>
+    
     <p>Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California, formada en 1996.<br>
          Está integrada por el vocalista, compositor y guitarrista rítmico Mike Shinoda, 
          el bajista Dave Farrell, <br>
@@ -16,20 +20,25 @@
          el baterista Colin Brittain, y la vocalista y compositora Emily Armstrong.<br>
          En 2024, el grupo anunció la incorporación de Armstrong como nueva vocalista tras el fallecimiento de Chester Bennington en 2017, 
          <br>y Brittain como nuevo baterista en reemplazo de Rob Bourdon</p>
+    </div>
+    <br><br><br><br>
          <!-- La siguiente tabla es para mostrar las fechas de los conciertos , se añade la palabra "border" para que se vea el borde de la tabla -->
-         <h3>Fecha de Conciertos</h3>
-         <table border ="1"> 
+         <div id="conciertos">
+         <h2>Fecha de Conciertos</h2>
+         
+         <div id="tabla">
+         <table > 
             <!-- Encabezado de la tabla, se usa thead para especificar que es una fila especial con esta funcion -->
-            <thead>
+            <tbody>
                 <tr>
                     <th>Fecha</th>
                     <th>Lugar</th>
                     <th>Hora</th>
                     <th>Precio</th>
                 </tr>
-            </thead>
+            
             <!-- Cuerpo de la tabla -->
-            <tbody>
+            
                 <tr>
                     <td>10/05/2025</td>
                     <td>Madrid-Estadio Santiago Bernabéu </td>
@@ -51,33 +60,41 @@
                 </tr>
             </tbody>
          </table>
+        </div>
+        </div>
+        <br><br>
          
-         <h3>Compra de Entradas</h3>
-         <form >
+         
+         <br><br>
+         <div id="compra">
+            <h2>Compra de Entradas</h2>
+         <form  method="post">
             <fieldset>
                 <legend>Datos Personales</legend>
                 <!--Se usa label for porque es recomendado hacerlo por la accesibilidad del elemento pero al estar contenido dentro del campo no seria necesario-->
-                <label for="Nombre">Nombre:</label>
+                <!--Solucion poco vistosa pero funcional para ayudar a alinear las celdas usando &nbsp;-->
+                <label for="Nombre">Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <!-- Nombre de la persona. Se añade la palabra "required" en cada elemento del formulario para que el campo sea obligatorio -->
-                <input type="text" name="nombre" id="nombre" required>
+                <input type="text" name="nombre" id="nombre">
             </fieldset>
+            
             <br>
             <fieldset>
                 <legend>Detalles del Concierto</legend>
                 <!-- Selección del concierto mediante las opciones disponibles -->
-                <label for="ciudad">Seleccione la ciudad:</label>
-                <select name="ciudad" id="ciudad" required>
+                <label for="ciudad">Seleccione la ciudad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <select name="ciudad" id="ciudad">
                     <option value="Madrid">Madrid</option>
                     <option value="Barcelona">Barcelona</option>
                     <option value="Sevilla">Sevilla</option>
                 </select>
                 <br>
-                <label for="fecha">Seleccione la fecha:</label>
-                <input type="date" id="fecha" name="fecha" required>
+                <label for="fecha">Seleccione la fecha:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="date" id="fecha" name="fecha" >
                 <br>
                 <!-- Cantidad de entradas que se desean comprar -->
-                <label for="cantidad">Cantidad de entradas:</label>
-                <select name="cantidad" id="cantidad" required>
+                <label for="cantidad">Seleccione cantidad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <select name="cantidad" id="cantidad" >
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -86,8 +103,8 @@
                 </select>
                 <br>
                 <!-- Categoría de la entrada -->
-                <label for="categoria">Seleccione la categoría:</label>
-                <select name="categoria" id="categoria" required>
+                <label for="categoria">Seleccione la categoría:&nbsp;</label>
+                <select name="categoria" id="categoria" >
                     <option value="Front Stage">Front Stage</option>
                     <option value="Pista">General</option>
                     <option value="Grada">Grada</option>
@@ -100,30 +117,33 @@
                 <legend>Método de Pago</legend>
                 <!-- Selección del método de pago mediante botones (radio) -->
                 <label for="metodoPago">Seleccione el método de pago:</label>
-                <input type="radio" id="tarjeta" name="metodoPago" value="Tarjeta" required>
+                <br>
+                <input type="radio" id="tarjeta" name="metodoPago" value="Tarjeta" >
                 <label for="tarjeta">Tarjeta</label>
-                <img src="img/tarjeta.jpg" alt="Tarjeta">
-                <input type="radio" id="paypal" name="metodoPago" value="Paypal" required>
+                <img src="img/visa.png"id="fotovisa"alt="Tarjeta">
+                <img src="img/master.png"id="fotomaster"alt="Tarjeta">
+                <input type="radio" id="paypal" name="metodoPago" value="Paypal">
                 <label for="paypal">Paypal</label>
-                <img src="img/paypal.jpg" alt="Paypal">
-                <input type="radio" id="bizum" name="metodoPago" value="Bizum" required>
+                <img  src="img/paypal.png"id="fotopaypal"alt="Paypal">
+                <input type="radio" id="bizum" name="metodoPago" value="Bizum" >
                 <label for="bizum">Bizum</label>
-                <img src="img/bizum.jpg" alt="Bizum">
-                <input type="radio" id="crypto" name="metodoPago" value="Criptomonedas" required>
+                <img  src="img/bizum.jpg"id="fotobizum"alt="Bizum">
+                <input type="radio" id="crypto" name="metodoPago" value="Criptomonedas" >
                 <label for="crypto">Criptomonedas</label>
-                <img src="img/crypto.jpg" alt="Criptomonedas">
+                <img src="img/btc1.png"id="fotobtc" alt="Criptomonedas">
             </fieldset>
             <br>
             <fieldset>
                 <legend>Términos y Condiciones</legend>
                 <!-- Checkbox para términos y condiciones -->   
                 <label for="terminos" >Acepto los términos y condiciones</label>
-                <input type="checkbox" id="terminos" name="terminos" required>
+                <input type="checkbox" id="terminos" name="terminos" >
                 
             </fieldset>
             <br>
-            <button type="submit">Comprar</button>
+            <button id = boton type="submit">Comprar</button>
          </form>
+        </div>
          <script src="js/script.js"></script>
 
 </body>

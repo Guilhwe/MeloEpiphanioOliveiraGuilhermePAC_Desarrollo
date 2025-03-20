@@ -15,6 +15,42 @@ formulario.addEventListener("submit", recogerFormulario);
         const metodoPago = document.querySelector('input[name="metodoPago"]:checked').value;
         const terminos = document.getElementById('terminos').checked;
 
+        if (!nombre) {
+            alert("Por favor, ingresa tu nombre.");
+            return; 
+        }
+    
+        if (!ciudad) {
+            alert("Por favor, selecciona una ciudad.");
+            return; 
+        }
+    
+        if (!fecha) {
+            alert("Por favor, selecciona una fecha.");
+            return; 
+        }
+    
+        if (!cantidad) {
+            alert("Por favor, selecciona la cantidad de entradas.");
+            return; 
+        }
+    
+        if (!categoria) {
+            alert("Por favor, selecciona una categoría.");
+            return; 
+        }
+    
+        if (!metodoPago) {
+            alert("Por favor, selecciona un método de pago.");
+            return; 
+        }
+    
+        if (!terminos) {
+            alert("Debes aceptar los términos y condiciones.");
+            return; 
+        }
+        
+        
         //console logs para comprobar que se han recogido los datos
         console.log("Datos del formulario:");
         console.log("Nombre:", nombre);
@@ -26,12 +62,12 @@ formulario.addEventListener("submit", recogerFormulario);
         console.log("Términos aceptados:", terminos);
 
         //guardamos los datos en el localStorage pazra poder mostrarlos en la pagina de confirmacion
-        localStorage.setItem('nombre', nombre);
-        localStorage.setItem('ciudad', ciudad);
-        localStorage.setItem('fecha', fecha);
-        localStorage.setItem('cantidad', cantidad);
-        localStorage.setItem('categoria', categoria);
-        localStorage.setItem('metodoPago', metodoPago);
+        sessionStorage.setItem('nombre', nombre);
+        sessionStorage.setItem('ciudad', ciudad);
+        sessionStorage.setItem('fecha', fecha);
+        sessionStorage.setItem('cantidad', cantidad);
+        sessionStorage.setItem('categoria', categoria);
+        sessionStorage.setItem('metodoPago', metodoPago);
 
         //redirigimos a la pagina de confirmacion
         window.location.href = "confirmacion.html";

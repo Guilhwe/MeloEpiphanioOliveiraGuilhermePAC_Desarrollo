@@ -1,0 +1,170 @@
+/*Estilos generales de la página*/
+body {
+    font-family: 'calibri'; 
+    background: linear-gradient(to bottom, #5433b1, #8d34b1) ;
+    color: #000000;
+}
+h1,h2 {
+    font-family:Verdana;
+    text-align: center;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 20px;
+    
+}
+table {
+    width: 100%;
+    table-layout: center;
+    margin:auto;
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-top-width: 5px;
+    
+}
+th, td {
+    
+    word-wrap: break-word;
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: #a552c5;
+}
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+input, select {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 1em;
+    box-sizing: content-box;
+    margin: 10px ;
+    width: 300px;
+    
+}
+
+fieldset {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px auto;
+    width: 90%;
+    background-color: #f5f5f5;
+}
+
+
+
+
+
+
+
+
+/*estilos de los elementos de la página*/
+#foto{
+    width: 400px;
+    height: 20%;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+#descripcion{
+    border : 1px solid black;
+    border-width: 5px;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 2x;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    
+    
+}
+#conciertos{
+    border : 1px solid black;
+    border-width: 5px;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 2x;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    
+}
+#compra{
+    border : 1px solid black;
+    border-width: 5px;
+    text-align: left;
+    margin: auto;
+    width: 50%;
+    padding: 2x;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    
+}
+#fotovisa {
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#fotomaster {
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#fotopaypal {
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#fotobizum {
+    width: 70px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#fotobtc {
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#boton {
+    
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 1em;
+    box-sizing: content-box;
+    margin:  auto ;
+    width: 200px;
+    background-color: #458bb9;
+    color: #ffffff;
+    transition: background-color 0.5s;
+    display: block;
+    }
+
+    #boton:hover {
+        background-color: #0c6c99;
+        cursor: pointer;
+
+}
+
+#recibo {
+    border : 1px solid black;
+    border-width: 5px;
+    text-align: left;
+    margin: auto;
+    width: 50%;
+    padding: 2x;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    
+}

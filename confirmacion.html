@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Confirmación de compra</title>
 </head>
 <body>
-    <header>
-        <h1>Confirmación de Compra</h1>
-    </header>
+    
+        
+    
+    <div id="recibo" >
+        <h1 >Confirmación de Compra</h1>
     <fieldset>
+        
         <h2>Detalles de tu compra</h2>
         <fieldset>
             <!-- Usamos span para que no haya un salto de linea y se escriba delante de cada nombre de campo-->
@@ -31,15 +35,16 @@
             Método de Pago: <span id="metodoPago"></span>
         </fieldset>
     </fieldset>
+    </div>
 
     <script>
         // Recuperaramos los datos del localStorage
-        document.getElementById('nombre').textContent = localStorage.getItem('nombre');
-        document.getElementById('fecha').textContent = localStorage.getItem('fecha');
-        document.getElementById('ciudad').textContent = localStorage.getItem('ciudad');
-        document.getElementById('cantidad').textContent = localStorage.getItem('cantidad');
-        document.getElementById('categoria').textContent = localStorage.getItem('categoria');
-        document.getElementById('metodoPago').textContent = localStorage.getItem('metodoPago');
+        document.getElementById('nombre').textContent = sessionStorage.getItem('nombre');
+        document.getElementById('fecha').textContent = sessionStorage.getItem('fecha');
+        document.getElementById('ciudad').textContent = sessionStorage.getItem('ciudad');
+        document.getElementById('cantidad').textContent = sessionStorage.getItem('cantidad');
+        document.getElementById('categoria').textContent = sessionStorage.getItem('categoria');
+        document.getElementById('metodoPago').textContent = sessionStorage.getItem('metodoPago');
     </script>
 </body>
 </html>
